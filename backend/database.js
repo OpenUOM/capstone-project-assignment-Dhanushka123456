@@ -22,7 +22,7 @@ const dbinitialize = async () => {
     testBase.resetDatabase(knex_db);
 }
 
-const readTeachers = async () => {
+const readTeachers = async (id, name, age) => {
     const sql = `SELECT * FROM teacher`
     return new Promise((resolve, reject) => {
         knex_db
@@ -36,7 +36,7 @@ const readTeachers = async () => {
     });
 }
 
-const readTeacherInfo = async (id) => {
+const readTeacherInfo = async (id, name, age) => {
     const sql = `SELECT * FROM teacher`
     return new Promise((resolve, reject) => {
         knex_db
@@ -64,7 +64,7 @@ const addTeacher = async (id, name, age) => {
     });
 }
 
-const updateTeacher = async (name, age, id) => {
+const updateTeacher = async (id, name, age) => {
     const sql = `SELECT * FROM teacher`
     return new Promise((resolve, reject) => {
         knex_db
@@ -78,7 +78,7 @@ const updateTeacher = async (name, age, id) => {
     });
 }
 
-const deleteTeacher = async (id) => {
+const deleteTeacher = async (id, name, age) => {
     const sql = `SELECT * FROM teacher`
     return new Promise((resolve, reject) => {
         knex_db
@@ -92,7 +92,7 @@ const deleteTeacher = async (id) => {
     });
 }
 
-const readStudents = async () => {
+const readStudents = async (id, name, age, religion) => {
     const sql = `SELECT * FROM student`
     return new Promise((resolve, reject) => {
         knex_db
@@ -106,7 +106,7 @@ const readStudents = async () => {
     });
 }
 
-const readStudentInfo = async (id) => {
+const readStudentInfo = async (id, name, age, religion) => {
     const sql = `SELECT * FROM student`
     return new Promise((resolve, reject) => {
         knex_db
@@ -134,7 +134,7 @@ const addStudent = async (id, name, age, religion) => {
     });
 }
 
-const updateStudent = async (name, age, religion, id) => {
+const updateStudent = async (id, name, age, religion) => {
     const sql = `SELECT * FROM student`
     return new Promise((resolve, reject) => {
         knex_db
@@ -148,7 +148,7 @@ const updateStudent = async (name, age, religion, id) => {
     });
 } 
 
-const deleteStudent = async (id) => {
+const deleteStudent = async (id, name, age, religion) => {
     const sql = `SELECT * FROM student`
     return new Promise((resolve, reject) => {
         knex_db
