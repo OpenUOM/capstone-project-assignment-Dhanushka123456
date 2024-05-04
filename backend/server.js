@@ -45,7 +45,7 @@ app.post("/listTeachers/getTeacherInfo", async function (req, res) {
   res.end(JSON.stringify(data));
 });
 
-app.post("/listTeachers/getTeacherInfo/addTeacher", async function (req, res) {
+app.post("/listTeachers/addTeacher", async function (req, res) {
   let reqBody = req.body;
   console.log(
     "Request received to add teacher. Req body: " + JSON.stringify(reqBody)
@@ -56,7 +56,7 @@ app.post("/listTeachers/getTeacherInfo/addTeacher", async function (req, res) {
   res.end(JSON.stringify(data));
 });
 
-app.post("/listTeachers/getTeacherInfo/editTeacher", async function (req, res) {
+app.post("/listTeachers/editTeacher", async function (req, res) {
   let reqBody = req.body;
   console.log(
     "Request received to update teacher. Req body: " + JSON.stringify(reqBody)
@@ -67,7 +67,7 @@ app.post("/listTeachers/getTeacherInfo/editTeacher", async function (req, res) {
   res.end(JSON.stringify(data));
 });
 
-app.post("/listTeachers/getTeacherInfo/deleteTeacher", async function (req, res) {
+app.post("/listTeachers/deleteTeacher", async function (req, res) {
   let reqBody = req.body;
   console.log(
     "Request received to delete teacher. Req body: " + JSON.stringify(reqBody)
@@ -97,7 +97,7 @@ app.post("/listStudents/getStudentInfo", async function (req, res) {
   res.end(JSON.stringify(data));
 });
 
-app.post("/listStudents/getStudentInfo/addStudent", async function (req, res) {
+app.post("/listStudents/addStudent", async function (req, res) {
   let reqBody = req.body;
   console.log(
     "Request received to add student. Req body: " + JSON.stringify(reqBody)
@@ -113,7 +113,7 @@ app.post("/listStudents/getStudentInfo/addStudent", async function (req, res) {
   res.end(JSON.stringify(data));
 });
 
-app.post("/listStudents/getStudentInfo/deleteStudent", async function (req, res) {
+app.post("/listStudents/deleteStudent", async function (req, res) {
   let reqBody = req.body;
   console.log(
     "Request received to delete student. Req body: " + JSON.stringify(reqBody)
@@ -124,7 +124,7 @@ app.post("/listStudents/getStudentInfo/deleteStudent", async function (req, res)
   res.end(JSON.stringify(data));
 });
 
-app.post("/listStudents/getStudentInfo/editStudent", async function (req, res) {
+app.post("/listStudents/editStudent", async function (req, res) {
   let reqBody = req.body;
   console.log(
     "Request received to update Student. Req body: " + JSON.stringify(reqBody)
