@@ -6,7 +6,7 @@ if(process.env.NODE_ENV === "test"){
       "Capstone Project Backend is running on http://localhost:3000"
     );
   });
-}else(process.env.NODE_ENV === "api"){
+}else{
   server.listen(8080, () => {
     console.log(
       "Capstone Project Backend is running on http://localhost:8080"
