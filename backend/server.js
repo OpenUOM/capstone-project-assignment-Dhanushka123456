@@ -127,7 +127,7 @@ app.post("/deleteStudent", async function (req, res) {
 app.post("/editStudent", async function (req, res) {
   let reqBody = req.body;
   console.log(
-    "Request received to update Student. Req body: " + JSON.stringify(reqBody)
+    "Request received to update student. Req body: " + JSON.stringify(reqBody)
   );
   let data = await updateStudent(reqBody.hometown,reqBody.name,reqBody.age,reqBody.id);
 
