@@ -2,7 +2,7 @@ import { Selector } from 'testcafe';
 process.env.NODE_ENV = "test";
 
 fixture`Testing Student UI`
-    .page`http://localhost:8080/liststudents`
+    .page`http://localhost:8080/students`
 
 test('Testing add students', async t => {
 
@@ -15,7 +15,7 @@ test('Testing add students', async t => {
     await t.typeText("#student-Hometown", "Catholic");
     await t.click("#student-add");
 
-    await t.navigateTo("/student");
+    await t.navigateTo("student");
 
     const table = Selector('#student-table')
     const rowCount = await table.find('tr').count;
