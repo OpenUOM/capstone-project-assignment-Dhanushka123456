@@ -2,20 +2,20 @@ import { Selector } from 'testcafe';
 process.env.NODE_ENV = "test";
 
 fixture`Testing Student UI`
-    .page`http://localhost:4401/student`
+    .page`http://localhost:3000/student`
 
 test('Testing add students', async t => {
 
-    await t.navigateTo("/dbinitialize");
+    await t.navigateTo("/test/dbinitialize");
 
-    await t.navigateTo("/addStudent");
+    await t.navigateTo("/test/addStudent");
     await t.typeText("#student-id", "999999");
     await t.typeText("#student-name", "Pasindu Basnayaka");
     await t.typeText("#student-age", "45");
     await t.typeText("#student-Hometown", "Catholic");
     await t.click("#student-add");
 
-    await t.navigateTo("/student");
+    await t.navigateTo("/test/student");
 
     const table = Selector('#student-table')
     const rowCount = await table.find('tr').count;
