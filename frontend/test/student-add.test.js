@@ -2,7 +2,7 @@ import { Selector } from 'testcafe';
 process.env.NODE_ENV = "test";
 
 fixture`Testing Student UI`
-    .page`http://localhost:3000`
+    .page`http://localhost:3000/student`
 
 test('Testing add students', async t => {
 
