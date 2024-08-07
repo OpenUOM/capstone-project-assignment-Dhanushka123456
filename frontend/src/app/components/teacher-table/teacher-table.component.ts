@@ -22,7 +22,7 @@ export class TeacherTableComponent implements OnInit {
   }
 
   addNewTeacher() {
-    this.router.navigate(['/api/addTeacher'])
+    this.router.navigate(['addTeacher'])
   }
 
   editTeacher(id) {
@@ -31,7 +31,7 @@ export class TeacherTableComponent implements OnInit {
         id: id
       }
     };
-    this.router.navigate(['/api/editTeacher'], navigationExtras)
+    this.router.navigate(['editTeacher'], navigationExtras)
   }
 
   initializeDB(){
