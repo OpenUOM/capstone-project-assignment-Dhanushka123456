@@ -2,10 +2,10 @@ import {Selector} from 'testcafe';
 process.env.NODE_ENV = "test";
 
 fixture`Testing Teacher UI`
-    .page`http://localhost:3000/teacher`
+    .page`http://localhost:4401/`
 
 test('Testing search Teachers', async t => {
-    await t.navigateTo("/test/teacher");
+    await t.navigateTo("/");
     await t.typeText("#teacher-search", "su");
 
     const table = Selector('#teacher-table')
@@ -14,5 +14,5 @@ test('Testing search Teachers', async t => {
     let tdText = await table.find('tr').nth(rowCount-1).innerText;
     await t.expect(rowCount).eql(2)
 
-    await t.navigateTo("/test/dbinitialize");
+    await t.navigateTo("/dbinitialize");
 });
