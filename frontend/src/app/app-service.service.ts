@@ -11,9 +11,9 @@ export class AppServiceService {
 
   constructor(private http: HttpClient) {
     if(environment.production == false){
-      this.ROOT_URL = '/test'
+      this.ROOT_URL = '/test/'
     }else{
-      this.ROOT_URL = '/api'
+      this.ROOT_URL = '/api/'
     }
   }
 
