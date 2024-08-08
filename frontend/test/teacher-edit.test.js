@@ -4,7 +4,7 @@ process.env.NODE_ENV = "test";
 fixture`Testing Teacher UI`
     .page`http://localhost:4200/teacher`;
 test('Testing edit teachers', async t => {
-    await t.navigateTo("/teacher");
+    await t.navigateTo("/addTeacher");
     await t.click("#teacher-edit-10003");
 
     await t.typeText("#teacher-name", "Changed Teacher Name");
