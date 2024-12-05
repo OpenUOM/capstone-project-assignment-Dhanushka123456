@@ -2,7 +2,7 @@ import {Selector} from 'testcafe';
 process.env.NODE_ENV = "test";
 
 fixture`Testing Teacher UI`
-    .page`http://localhost:3000/teacher`;
+    .page`http://localhost:8080/teacher`;
 test('Testing edit teachers', async t => {
     await t.navigateTo("/addTeacher");
     await t.click("#teacher-edit-10003");
