@@ -6,16 +6,16 @@ fixture`Testing Student UI`
 
 test('Testing edit students', async t => {
     await t.navigateTo("/addStudent");
-    await t.typeText("#student-id", "999999");
+    await t.typeText("#student-id", "99998");
     await t.typeText("#student-name", "Pasindu Basnayaka");
     await t.typeText("#student-age", "45");
     await t.typeText("#student-Hometown", "catholic");
     await t.click("#student-add");
 
     await t.navigateTo("/student");
-    await t.click("#student-edit-999999");
+    await t.click("#student-edit-99998");
 
-    await t.typeText("#student-name", "Changed Student Name");
+    await t.typeText("#student-name", "Somadasa kasun");
     await t.typeText("#student-age", "99");
     await t.typeText("#student-Hometown", "Hometown");
     await t.click("#student-edit");
@@ -29,5 +29,5 @@ test('Testing edit students', async t => {
     await t.expect(tdText).contains("Changed Student Name");
 
     await t.navigateTo("/student");
-    await t.click("#student-delete-999999");
+    await t.click("#student-delete-99998");
 });
