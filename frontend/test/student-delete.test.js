@@ -6,7 +6,7 @@ fixture`Testing Student UI`
     
 test('Testing delete students', async t => {
     await t.navigateTo("/addStudent");
-    await t.typeText("#student-id", "22222");
+    await t.typeText("#student-id", "20003");
     await t.typeText("#student-name", "Hiruni Gajanayake");
     await t.typeText("#student-age", "45");
     await t.typeText("#student-Hometown", "buddhist");
@@ -14,7 +14,7 @@ test('Testing delete students', async t => {
 
     await t.navigateTo("/student");
 
-    await t.click("#student-delete-22222");
+    await t.click("#student-delete-20003");
 
     const table = Selector('#student-table')
     const rowCount = await table.find('tr').count;
