@@ -6,14 +6,14 @@ fixture`Testing Teacher UI`
 
 test('Testing delete teachers', async t => {
     await t.navigateTo("/addTeacher");
-    await t.typeText("#teacher-id", "300000");
+    await t.typeText("#teacher-id", "10003");
     await t.typeText("#teacher-name", "Hasitha Fernando");
     await t.typeText("#teacher-age", "45");
     await t.click("#teacher-add");
 
     await t.navigateTo("/teacher");
 
-    await t.click("#teacher-delete-300000");
+    await t.click("#teacher-delete-10003");
 
     const table = Selector('#teacher-table')
     const rowCount = await table.find('tr').count;
