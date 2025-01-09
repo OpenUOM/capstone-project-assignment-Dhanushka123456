@@ -17,7 +17,7 @@ test('Testing add students', async t => {
 
     await t.navigateTo("/student");
 
-    const table = Selector('student')
+    const table = Selector('/student')
     const rowCount = await table.find('tr').count;
 
      let tdText = await table.find('tr').nth(rowCount - 1).innerText;
