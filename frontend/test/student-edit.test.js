@@ -6,14 +6,14 @@ fixture`Testing Student UI`
 
 test('Testing edit students', async t => {
     await t.navigateTo("/addStudent");
-    await t.typeText("#student-id", "99998");
+    await t.typeText("#student-id", "20004");
     await t.typeText("#student-name", "Pasindu Basnayaka");
     await t.typeText("#student-age", "45");
     await t.typeText("#student-Hometown", "catholic");
     await t.click("#student-add");
 
     await t.navigateTo("/student");
-    await t.click("#student-edit-99998");
+    await t.click("#student-edit-20004");
 
     await t.typeText("#student-name", "Somadasa kasun");
     await t.typeText("#student-age", "99");
