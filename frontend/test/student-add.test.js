@@ -12,7 +12,7 @@ test('Testing add students', async t => {
     await t.typeText("#student-id", "20004");
     await t.typeText("#student-name", "Pasindu Basnayaka");
     await t.typeText("#student-age", "45");
-    await t.typeText("#student-hometown", "Catholic");
+    await t.typeText("#student-Hometown", "Kegalla");
     await t.click("#student-add");
 
     await t.navigateTo("/student");
