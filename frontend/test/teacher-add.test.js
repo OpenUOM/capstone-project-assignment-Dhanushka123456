@@ -19,5 +19,5 @@ test('Testing add teachers', async t => {
     const rowCount = await table.find('tr').count;
 
     let tdText = await table.find('tr').nth(rowCount - 1).innerText;
-    await t.expect(tdText).notcontains("Mohan Perera");
+    await t.expect(tdText).notContains("Mohan Perera");
 });
