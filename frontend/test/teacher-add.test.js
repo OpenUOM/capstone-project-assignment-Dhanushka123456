@@ -8,9 +8,9 @@ test('Testing add teachers', async t => {
     await t.navigateTo("/dbinitialize");
 
     await t.navigateTo("/addTeacher");
-    await t.typeText("#teacher-id", "10004");
-    await t.typeText("#teacher-name", "Mohan Perera");
-    await t.typeText("#teacher-age", "45");
+    await t.typeText(id, "10004");
+    await t.typeText(name, "Mohan Perera");
+    await t.typeText(age, "45");
     await t.click("#teacher-add");
 
     await t.navigateTo("/teacher");
