@@ -11,7 +11,7 @@ test('Testing delete teachers', async t => {
     await t.typeText("#teacher-age", "45");
     await t.click("#teacher-add");
 
-    await t.navigateTo("/teacher");
+    await t.navigateTo("/");
 
     await t.click("#teacher-delete");
 
