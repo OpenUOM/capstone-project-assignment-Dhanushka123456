@@ -14,7 +14,8 @@ test('Testing edit students', async t => {
 
     await t.navigateTo("/student");
     await t.click("#student-edit");
-
+    
+    await t.typeText("#student-id", "20005");
     await t.typeText("#student-name", "Somadasa kasun");
     await t.typeText("#student-age", "99");
     await t.typeText("#student-Hometown", "Hometown");
@@ -26,8 +27,8 @@ test('Testing edit students', async t => {
     const rowCount = await table.find('tr').count;
 
     let tdText = await table.find('tr').nth(rowCount - 1).innerText;
-    await t.expect(tdText).contains("Changed Student Name");
+    await t.expect(tdText).contains("Somadasa kasun");
 
     await t.navigateTo("/student");
-    await t.click("#student-delete-99998");
+    await t.click("#student-delete-20005");
 });
