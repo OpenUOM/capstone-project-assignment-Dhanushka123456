@@ -14,7 +14,7 @@ test('Testing delete students', async t => {
 
     await t.navigateTo("/student");
 
-    await t.typeText("#student-delete-20003");
+    await t.typeText("#student-delete-{{student[0].id}}");
 
     const table = Selector('#student-table')
     const rowCount = await table.find('td').count;
