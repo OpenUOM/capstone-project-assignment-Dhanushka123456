@@ -14,11 +14,11 @@ test('Testing delete students', async t => {
 
     await t.navigateTo("/student");
 
-    await t.click("#student-delete-{{student[20003].id}}");
+    await t.click("#student-delete-[20003]");
 
     const table = Selector('#student-table')
-    const rowCount = await table.find('td').count;
+    const rowCount = await table.find('tr').count;
 
-    let tdText = await table.find('td').nth(rowCount - 1).innerText;
+    let tdText = await table.find('tr').nth(rowCount - 1).innerText;
     await t.expect(tdText).notContains("Hiruni Gajanayake");
 });
