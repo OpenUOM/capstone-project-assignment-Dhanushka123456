@@ -23,8 +23,8 @@ test('Testing edit students', async t => {
     const table = Selector('#student-table')
     const rowCount = await table.find('tr').count;
 
-    let tdText = await table.find('tr').nth(rowCount - 1).innerText;
-    await t.expect(tdText).notcontains("Isuri Sugathadasa");
+    let tdText = await table.find('td').nth(rowCount - 1).innerText;
+    await t.expect(tdText).contains("Isuri Sugathadasa");
 
     await t.navigateTo("/student");
     await t.click("#student-delete-222222");
