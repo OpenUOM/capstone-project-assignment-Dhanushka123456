@@ -5,6 +5,7 @@ fixture`Testing Student UI`
     .page`http://localhost:8080/student`;
     
 test('Testing delete students', async t => {
+    await t.navigateTo("/dbinitialize");
     await t.navigateTo("/addStudent");
     await t.typeText("#student-id", "20003");
     await t.typeText("#student-name", "Hiruni Gajanayake");
@@ -13,7 +14,7 @@ test('Testing delete students', async t => {
     await t.click("#student-add");
 
     await t.navigateTo("/student");
-
+    await t.navigateTo("/deleteStudent");
     await t.typeText("#student-id", "20003");
     await t.typeText("#student-name", "Hiruni Gajanayake");
     await t.typeText("#student-age", "45");
