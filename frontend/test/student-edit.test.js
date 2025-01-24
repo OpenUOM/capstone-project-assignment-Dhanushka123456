@@ -9,13 +9,13 @@ test('Testing edit students', async t => {
     await t.typeText("#student-id", "222222");
     await t.typeText("#student-name", "Isuri De Silva");
     await t.typeText("#student-age", "27");
-    await t.typeText("#student-religion", "buddhist");
+    await t.typeText("#student-Hometown", "buddhist");
     await t.click("#student-add");
 
     await t.navigateTo("/editStudent");
     await t.typeText("#student-name", "Isuri Sugathadasa");
     await t.typeText("#student-age", "28");
-    await t.typeText("#student-religion", "catholic");
+    await t.typeText("#student-Hometown", "catholic");
     await t.click("#student-edit");
 
     await t.navigateTo("/student");
