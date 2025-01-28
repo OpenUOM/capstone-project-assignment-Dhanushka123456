@@ -13,11 +13,11 @@ test('Testing edit students', async t => {
     await t.click("#student-add");
 
     await t.navigateTo("/student");
-    await t.click("#student-edit-{999999}");
-
-    await t.typeText("#student-name", "Changed Student Name");
+    await t.navigateTo("/editStudent");
+    await t.typeText("#student-id", "999999");
+    await t.typeText("#student-name", "Chamara ranawaka");
     await t.typeText("#student-age", "99");
-    await t.typeText("#student-Hometown", "Hometown");
+    await t.typeText("#student-Hometown", "katana");
     await t.click("#student-edit");
 
     await t.navigateTo("/student");
@@ -26,7 +26,7 @@ test('Testing edit students', async t => {
     const rowCount = await table.find('tr').count;
 
     let tdText = await table.find('tr').nth(rowCount - 1).innerText;
-    await t.expect(tdText).contains("Changed Student Name");
+    await t.expect(tdText).contains("Chamara ranawaka");
 
     await t.navigateTo("/student");
     await t.click("#student-delete-999999");
