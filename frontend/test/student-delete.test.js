@@ -17,7 +17,7 @@ test('Testing delete students', async t => {
 
      await t.navigateTo("/dbinitialize");
     await t.navigateTo("/deleteStudent");
-    await t.typeText("#student-id", "222222");
+    
     await t.typeText("#student-name", "Hiruni Gajanayake");
     await t.typeText("#student-age", "45");
     await t.typeText("#student-Hometown", "buddhist");
