@@ -5,16 +5,16 @@ fixture`Testing Student UI`
     .page`http://localhost:8080/student`;
     
 test('Testing delete students', async t => {
-    await t.navigateTo("/addStudent");
+    await t.navigateTo("/deleteStudent");
     await t.typeText("#student-id", "222222");
     await t.typeText("#student-name", "Hiruni Gajanayake");
     await t.typeText("#student-age", "45");
     await t.typeText("#student-Hometown", "buddhist");
-    await t.click("#student-add");
+    await t.click("#student-delete");
 
     await t.navigateTo("/student");
 
-    await t.click("#student-delete-{222222}");
+    await t.click("#student-delete");
 
     const table = Selector('#student-table')
     const rowCount = await table.find('tr').count;
