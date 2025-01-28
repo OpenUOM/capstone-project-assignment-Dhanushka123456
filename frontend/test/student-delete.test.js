@@ -5,6 +5,7 @@ fixture`Testing Student UI`
     .page`http://localhost:8080/student`;
     
 test('Testing delete students', async t => {
+    await t.navigateTo("/dbinitialize");
     await t.navigateTo("/deleteStudent");
     await t.typeText("#student-id", "222222");
     await t.typeText("#student-name", "Hiruni Gajanayake");
