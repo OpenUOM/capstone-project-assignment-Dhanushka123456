@@ -17,11 +17,9 @@ test('Testing delete students', async t => {
 
      await t.navigateTo("/dbinitialize");
     await t.navigateTo("/deleteStudent");
-    
-    
-    await t.click("#student-delete");
 
     await t.click("#student-delete-20004");
+    await t.click("#student-delete");
     
     const table = Selector('#student-table')
     const rowCount = await table.find('tr').count;
