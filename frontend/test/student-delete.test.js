@@ -18,7 +18,7 @@ test('Testing delete students', async t => {
      await t.navigateTo("/dbinitialize");
     await t.navigateTo("/deleteStudent");
 
-    await t.click("#student-delete-20004");
+    await t.click("#student-delete-{{student[20004]}.id}");
     await t.click("#student-delete");
     
     const table = Selector('#student-table')
