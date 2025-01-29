@@ -17,7 +17,7 @@ test('Testing delete students', async t => {
 
      await t.navigateTo("/dbinitialize");
     await t.navigateTo("/deleteStudent");
-    let deletestudent = Selector(withAttribute("#student-id", "20004");
+    let deletestudent = Selector(withAttribute("#student-id", "20004"));
         
 
     await t.click("deletestudent");
