@@ -12,7 +12,7 @@ test('Testing edit students', async t => {
     await t.typeText("#student-Hometown", "Kandy");
     await t.click("#student-add");
 
-    await t.navigateTo("/student");
+    await t.navigateTo("/editStudent");
     await t.click("#student-edit-20003");
 
     await t.typeText("#student-name", "Dhanushka Eranda");
@@ -20,7 +20,7 @@ test('Testing edit students', async t => {
     await t.typeText("#student-Hometown", "Wennappuwa");
     await t.click("#student-edit");
 
-    await t.navigateTo("/student");
+    await t.navigateTo("/editStudent");
 
     const table = Selector('#student-table')
     const rowCount = await table.find('tr').count;
