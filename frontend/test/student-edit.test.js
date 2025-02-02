@@ -5,15 +5,8 @@ fixture`Testing Student UI`
     .page`http://localhost:8080/student`;
 
 test('Testing edit students', async t => {
-    await t.navigateTo("/addStudent");
-    await t.typeText("#student-id", "20004");
-    await t.typeText("#student-name", "Pasindu Basnayaka");
-    await t.typeText("#student-age", "45");
-    await t.typeText("#student-Hometown", "catholic");
-    await t.click("#student-add");
-    
     await t.navigateTo("/editStudent");
-    await t.typeText("#student-id", "20004");
+    await t.typeText("#student-id", "20002");
     await t.typeText("#student-name", "Chamara ranawaka");
     await t.typeText("#student-age", "46");
     await t.typeText("#student-Hometown", "galle");
