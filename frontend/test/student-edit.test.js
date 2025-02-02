@@ -11,13 +11,12 @@ test('Testing edit students', async t => {
     await t.typeText("#student-age", "45");
     await t.typeText("#student-Hometown", "catholic");
     await t.click("#student-add");
-
-    await t.navigateTo("/student");
+    
     await t.navigateTo("/editStudent");
-    await t.click("#student-edit-20004");
-
+    await t.typeText("#student-id", "20004");
     await t.typeText("#student-name", "Chamara ranawaka");
     await t.typeText("#student-age", "46");
+    await t.typeText("#student-Hometown", "galle");
     await t.click("#student-edit");
     
     await t.navigateTo("/student");
