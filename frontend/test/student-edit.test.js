@@ -18,7 +18,7 @@ test('Testing edit students', async t => {
     await t.typeText("#student-Hometown", "Kandy");
     await t.click("#student-edit");
 
-    await t.navigateTo("/student");
+    await t.navigateTo("/editstudent");
 
     const table = Selector('#student-table')
     const rowCount = await table.find('tr').count;
