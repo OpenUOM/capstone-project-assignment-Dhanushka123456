@@ -6,13 +6,13 @@ fixture`Testing Teacher UI`
 test('Testing edit teachers', async t => {
     await t.navigateTo("/addTeacher");
     await t.typeText("#teacher-id", "10003");
-    await t.typeText("#teacher-name", "Hasitha Fernando");
-    await t.typeText("#teacher-age", "45");
+    await t.typeText("#teacher-name", "Parasanna Mahagamage");
+    await t.typeText("#teacher-age", "30");
     await t.click("#teacher-add");
-    await t.click("#teacher-edit-10003");
-
+    
+    await t.navigateTo("/editTeacher");
     await t.typeText("#teacher-name", "Sadhamali thushitha");
-    await t.typeText("#teacher-age", "99");
+    await t.typeText("#teacher-age", "45");
     await t.click("#teacher-edit");
 
     await t.navigateTo("/");
