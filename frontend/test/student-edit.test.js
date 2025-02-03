@@ -24,5 +24,5 @@ test('Testing edit students', async t => {
     const rowCount = await table.find('td').count;
 
     let tdText = await table.find('tr').nth(rowCount - 1).innerText;
-    await t.expect(tdText).contains("Dhanushka Eranda");
+    await t.expect(tdText).contains("Dhanushka Eranda","20003","10","Kandy");
 });
