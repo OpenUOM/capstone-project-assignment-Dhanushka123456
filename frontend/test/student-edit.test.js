@@ -20,9 +20,9 @@ test('Testing edit students', async t => {
 
     await t.navigateTo("/student");
 
-    const table = Selector('#student-name')
-    const rowCount = await table.find('tr').count;
+    const table = Selector('#student-table')
+    const rowCount = await table.find('td').count;
 
-    let tdText = await table.find('tr').nth(rowCount - 1).innerText;
+    let tdText = await table.find('td').nth(rowCount - 1).innerText;
     await t.expect(tdText).contains("Dhanushka Eranda");
 });
