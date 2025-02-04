@@ -9,11 +9,15 @@ test('Testing delete students', async t => {
     await t.typeText("#student-id", "20004");
     await t.typeText("#student-name", "Hiruni Gajanayake");
     await t.typeText("#student-age", "45");
-    await t.typeText("#student-Hometown", "buddhist");
+    await t.typeText("#student-Hometown", "Kandy");
     await t.click("#student-add");
 
     await t.navigateTo("/deleteStudent");
-    await t.click("#student-delete-20004");
+    await t.typeText("#student-id", "20004");
+    await t.typeText("#student-name", "Hiruni Gajanayake");
+    await t.typeText("#student-age", "45");
+    await t.typeText("#student-Hometown", "Kandy");
+    await t.click("#student-delete");
         
 
     await t.click("/student");
@@ -22,5 +26,5 @@ test('Testing delete students', async t => {
     const rowCount = await table.find('tr').count;
 
     let tdText = await table.find('tr').nth(rowCount - 1).innerText;
-    await t.expect(tdText).contains("Hiruni Gajanayake");
+    await t.expect(tdText).notcontains("Hiruni Gajanayake");
 });
