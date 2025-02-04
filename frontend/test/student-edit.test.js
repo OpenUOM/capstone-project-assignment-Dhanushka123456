@@ -23,6 +23,6 @@ test('Testing edit students', async t => {
     const table = Selector('#student-table')
     const rowCount = await table.find('tr').count;
 
-    let tdText = await table.find('tr').nth(rowCount - 2).innerText;
+    let tdText = await table.find('th').nth(rowCount - 2).innerText;
     await t.expect(tdText).contains("Dhanushka Eranda");
 });
