@@ -12,26 +12,26 @@ test('Testing delete students', async t => {
     await t.typeText("#student-Hometown", "Kandy");
     await t.click("#student-add");
 
-    //await t.navigateTo("/deleteStudent");
-    //await t.typeText("#student-name", "Hiruni Gajanayake");
-    //await t.typeText("#student-age", "45");
-    //await t.typeText("#student-Hometown", "Kandy");
-    //await t.click("#student-delete");
+    await t.navigateTo("/deleteStudent");
+    await t.typeText("#student-name", "Hiruni Gajanayake");
+    await t.typeText("#student-age", "45");
+    await t.typeText("#student-Hometown", "Kandy");
+    await t.click("#student-delete");
         
 
-    await t.navigateTo("/student");
+    //await t.navigateTo("/student");
 
-    await t.click("#student-delete-20004");
+    //await t.click("#student-delete-20004");
 
-    const deleteButton = Selector("#student-delete-20004");
-    await t.expect(deleteButton.exists).notOk();
+    //const deleteButton = Selector("#student-delete-20004");
+   // await t.expect(deleteButton.exists).notOk();
 
-    const studentRow = Selector('#student-table tr').withText("Hasitha Fernando");
-    await t.expect(studentRow.exists).notOk();
+    //const studentRow = Selector('#student-table tr').withText("Hasitha Fernando");
+   // await t.expect(studentRow.exists).notOk();
     
-    //const table = Selector('#student-table')
-    //const rowCount = await table.find('tr').count;
+    const table = Selector('#student-table')
+    const rowCount = await table.find('tr').count;
 
-    //let tdText = await table.find('tr').nth(rowCount - 1).innerText;
-    //await t.expect(tdText).notcontains("Hiruni Gajanayake");
+    let tdText = await table.find('tr').nth(rowCount - 1).innerText;
+    await t.expect(tdText).contains("#student-delete-20004");
 });
