@@ -21,8 +21,8 @@ test('Testing edit students', async t => {
     await t.navigateTo("/student");
 
     const table = Selector('#student-table')
-    const rowCount = await table.find('tr').count;
+    const rowCount = await table.find('th').count;
 
-    let tdText = await table.find('th').nth(rowCount - 2).innerText;
+    let tdText = await table.find('th').nth(rowCount - 1).innerText;
     await t.expect(tdText).contains("Dhanushka Eranda");
 });
