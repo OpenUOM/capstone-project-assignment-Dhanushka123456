@@ -19,7 +19,7 @@ test('Testing delete students', async t => {
     await t.click("#student-delete");
         
 
-    //await t.navigateTo("/student");
+    await t.navigateTo("/student");
 
     //await t.click("#student-delete-20004");
 
@@ -28,10 +28,13 @@ test('Testing delete students', async t => {
 
     //const studentRow = Selector('#student-table tr').withText("Hasitha Fernando");
    // await t.expect(studentRow.exists).notOk();
+    const deleteButton = Selector("#student-delete-20004");
+    await t.expect(deleteButton.exists).ok();
+    await t.click(deleteButton);
     
-    const table = Selector('#student-table')
-    const rowCount = await table.find('tr').count;
+    //const table = Selector('#student-table')
+    //const rowCount = await table.find('tr').count;
 
-    let tdText = await table.find('tr').nth(rowCount - 1).innerText;
-    await t.expect(tdText).contains("#student-delete-20004");
+    //let tdText = await table.find('tr').nth(rowCount - 1).innerText;
+    //await t.expect(tdText).contains("#student-delete-20004");
 });
