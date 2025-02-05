@@ -13,7 +13,7 @@ test('Testing delete students', async t => {
     await t.click("#student-add");
 
     await t.navigateTo("/deleteStudent");
-    await t.click("#student-delete");
+    await t.click("#student-delete-20004");
         
 
     await t.navigateTo("/student");
