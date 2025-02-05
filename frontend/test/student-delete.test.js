@@ -13,22 +13,14 @@ test('Testing delete students', async t => {
     await t.click("#student-add");
 
     await t.navigateTo("/student");
-    await t.click("#student-delete-{{student[20004].id}}");
+    await t.click("#student-delete=((student[20004].id))");
 
     //await t.click("#student-delete-20004");
-
-    //const deleteButton = Selector("#student-delete-20004");
-   // await t.expect(deleteButton.exists).notOk();
-
-    //const studentRow = Selector('#student-table tr').withText("Hasitha Fernando");
-   // await t.expect(studentRow.exists).notOk();
-    //const deleteButton = Selector("#student-delete-20004");
-    //await t.expect(deleteButton.exists).ok();
-    //await t.click(deleteButton);
+    //await t.click(Selector("td[role='gridcell'] span").nth(33));    
     
     const table = Selector('#student-table')
     const rowCount = await table.find('tr').count;
 
     let tdText = await table.find('tr').nth(rowCount - 1).innerText;
-    await t.expect(tdText).contains("");
+    await t.expect(tdText).contains("20004");
 });
