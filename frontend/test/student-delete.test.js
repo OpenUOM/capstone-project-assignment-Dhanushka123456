@@ -13,7 +13,11 @@ test('Testing delete students', async t => {
     await t.click("#student-add");
 
     await t.navigateTo("/student");
-    await t.click("#student-delete-20004");
+    const deleteButton = Selector('[id^="student-delete-"]').withText("20004");
+    await t.click(deleteButton);
+
+    await t.wait(1000);
+
 
     //await t.click("#student-delete-20004");
     //await t.click(Selector("td[role='gridcell'] span").nth(33));    
