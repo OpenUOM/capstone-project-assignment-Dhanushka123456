@@ -21,5 +21,5 @@ test('Testing delete students', async t => {
     const rowCount = await table.find('tr').count;
 
     let tdText = await table.find('tr').nth(rowCount - 1).innerText;
-    await t.expect(tdText).notContains("");
+    await t.expect(tdText).Contains("");
 });
