@@ -12,7 +12,7 @@ test('Testing search students', async t => {
     const rowCount = await table.find('tr').count;
 
     let tdText = await table.find('tr').nth(rowCount-1).innerText;
-    await t.expect(rowCount).eql(-1)
+    await t.expect(rowCount).eql("")
 
     await t.navigateTo("/dbinitialize");
 });
