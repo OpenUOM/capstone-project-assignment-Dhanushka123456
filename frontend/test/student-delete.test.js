@@ -17,8 +17,8 @@ test('Testing delete students', async t => {
     await t.click("#student-delete-20004");
     await t.navigateTo("/student");
     const table = Selector('#student-table')
-    const rowCount = await table.find('tr').count;
+    const rowCount = await table.find('td').count;
 
-    let tdText = await table.find('tr').nth(rowCount - 1).innerText;
+    let tdText = await table.find('td').nth(rowCount - 1).innerText;
     await t.expect(tdText).notContains("20004");
 });
