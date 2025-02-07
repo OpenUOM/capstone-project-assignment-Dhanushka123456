@@ -12,7 +12,7 @@ test('Testing delete students', async t => {
     await t.typeText("#student-Hometown", "Kandy");
     await t.click("#student-add");
 
-    await t.navigateTo("/deleteStudent");
+    await t.navigateTo("/student");
     await t.typeText("#student-id", "20005");
     await t.click('#student-delete');
 
