@@ -13,9 +13,8 @@ test('Testing delete students', async t => {
     await t.click("#student-add");
 
     await t.navigateTo("/deleteStudent");
-    const deleteButton = Selector('#student-delete-20003');
 
-    await t.click('#student-delete-20003');
+    await t.click('#student-delete');
     await t.navigateTo("/student");
     const table = Selector('#student-table')
     const rowCount = await table.find('tr').count;
