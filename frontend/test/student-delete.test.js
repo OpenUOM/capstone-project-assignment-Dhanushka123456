@@ -13,17 +13,16 @@ test('Testing delete students', async t => {
     await t.click("#student-add");
 
     await t.navigateTo("/deleteStudent");
-
-    await t.expect(Selector('#student-delete-20005').exists).ok({ timeout: 5000 });
-    await t.click(Selector('#student-delete-20005'));
+    await t.typeText("#student-id", "20005");
+    await t.click('#student-delete');
 
     //await t.click(Selector('[data-testid="student-delete-button"]').withText('20005'));
 
     //await t.click (Selector('#student-delete-20005'));
     await t.navigateTo("/student");
     const table = Selector('#student-table')
-    const rowCount = await table.find('td').count;
+    const rowCount = await table.find('tr').count;
 
-    let tdText = await table.find('td').nth(rowCount - 1).innerText;
+    let tdText = await table.find('tr').nth(rowCount - 1).innerText;
     await t.expect(tdText).contains("");
 });
