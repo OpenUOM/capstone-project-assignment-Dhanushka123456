@@ -14,7 +14,10 @@ test('Testing delete students', async t => {
 
     await t.navigateTo("/deleteStudent");
 
-    await t.click(Selector('[data-testid="student-delete-button"]').withText('20005'));
+    await t.expect(Selector('#student-delete-20005').exists).ok({ timeout: 5000 });
+    await t.click(Selector('#student-delete-20005'));
+
+    //await t.click(Selector('[data-testid="student-delete-button"]').withText('20005'));
 
     //await t.click (Selector('#student-delete-20005'));
     await t.navigateTo("/student");
