@@ -15,11 +15,11 @@ test('Testing delete students', async t => {
     await t.navigateTo("/deleteStudent");
     const deleteButton = Selector('#student-delete-20003');
 
-    await t.click(deleteButton);
+    await t.click('#student-delete-20003');
     await t.navigateTo("/student");
     const table = Selector('#student-table')
     const rowCount = await table.find('tr').count;
 
     let tdText = await table.find('tr').nth(rowCount - 1).innerText;
-    await t.expect(tdText).Contains("");
+    await t.expect(tdText).Contains("#student-delete-20003");
 });
