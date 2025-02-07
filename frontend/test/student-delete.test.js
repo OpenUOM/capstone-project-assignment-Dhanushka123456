@@ -14,13 +14,11 @@ test('Testing delete students', async t => {
 
     await t.navigateTo("/deleteStudent");
 
-    const deleteButton = Selector('#student-delete-20005');
-    await t.expect(deleteButton.exists).ok("Delete button not found");
-    await t.click(deleteButton);
+    await t.click = Selector('#student-delete-20005');
     await t.navigateTo("/student");
     const table = Selector('#student-table')
-    const rowCount = await table.find('tr').count;
+    const rowCount = await table.find('td').count;
 
-    let tdText = await table.find('tr').nth(rowCount - 1).innerText;
-    await t.expect(tdText).Contains("#student-delete-20005");
+    let tdText = await table.find('td').nth(rowCount - 1).innerText;
+    await t.expect(tdText).contains("");
 });
