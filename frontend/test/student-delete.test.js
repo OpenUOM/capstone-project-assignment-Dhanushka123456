@@ -2,40 +2,23 @@ import { Selector } from 'testcafe';
 process.env.NODE_ENV = "test";
 
 fixture`Testing Student UI`
-    .page`http://localhost:8080/student`;
-     await t.expect(Selector("#student-id").exists).ok();
+    .page`http://localhost:8080/student`
 
-  // Enter student ID
-      await t.typeText("#student-id", "20003");
+test('Testing delete students', async t => {
+    await t.navigateTo("/addStudent");
+    await t.typeText("#student-id", "222222");
+    await t.typeText("#student-name", "Hiruni Gajanayake");
+    await t.typeText("#student-age", "45");
+    await t.typeText("#student-Hometown", "buddhist");
+    await t.click("#student-add");
 
-  // Ensure delete button exists before clicking
-      const deleteButton = Selector("#student-delete-20003");
-      await t.expect(deleteButton.exists).ok();
+    await t.navigateTo("/deleteStudent");
 
-  // Click delete button
-      await t.click(deleteButton);
+    await t.click("#student-delete-222222");
 
-  // Verify student is deleted (adjust selector based on UI feedback)
-      await t.expect(Selector("#student-20003").exists).notOk();
+    const table = Selector('#student-delete-222222')
+    const rowCount = await table.find('tr').count;
+
+    let tdText = await table.find('tr').nth(rowCount - 1).innerText;
+    await t.expect(tdText).notContains("Hiruni Gajanayake");
 });
-    
-//test('Testing delete students', async t => {
-   // await t.navigateTo("/addStudent");
-   // await t.typeText("#student-id", "20003");
-    //await t.typeText("#student-name", "Hiruni Gajanayake");
-   // await t.typeText("#student-age", "45");
-   //await t.typeText("#student-Hometown", "buddhist");
-    //await t.click("#student-add");
-
-    //await t.navigateTo("/student");
-    //await t.typeText("#id","20003");
-   // await t.click("#student-delete-20003");
-    
-    //await t.navigateTo("/student");
-    //const table = Selector('#student-table')
-    //const rowCount = await table.find('tr').count;
-
-    //let tdText = await table.find('tr').nth(rowCount - 1).innerText;
-    //await t.expect(tdText).notContains("Hiruni Gajanayake");
-    
-//});
