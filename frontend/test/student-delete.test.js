@@ -11,7 +11,10 @@ test('Testing delete students', async t => {
     await t.typeText("#student-age", "45");
     await t.typeText("#student-Hometown", "Kandy");
     await t.click("#student-add");
+    
+    await t.navigateTo("/deleteStudent");
 
+     await t.click(Selector('#student-delete-222222').withText("222222"));
     
 
      await t.navigateTo("/student");
@@ -23,7 +26,5 @@ test('Testing delete students', async t => {
     let tdText = await table.find('td').nth(rowCount - 1).innerText;
     await t.expect(tdText).contains("222222");
 
-    await t.navigateTo("/deleteStudent");
-
-     await t.click(Selector('#student-delete-222222').withText('222222'));
+    
 });
