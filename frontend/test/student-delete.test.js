@@ -12,12 +12,14 @@ test('Testing delete students', async t => {
     await t.typeText("#student-Hometown", "Kandy");
     await t.click("#student-add");
     
-    await t.navigateTo("/deleteStudent");
+    await t.navigateTo("/student");
+    const studentRow = Selector('#student-table').find('td').withText("20005");
+    await t.expect(studentRow.exists).ok('Student should be present before deletion');
 
-     await t.click('#student-delete');
+    await t.click('#student-delete');
     
 
-     await t.navigateTo("/student");
+    await t.navigateTo("/student");
 
 
     const table = Selector('#student-table')
