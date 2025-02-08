@@ -12,10 +12,13 @@ test('Testing delete students', async t => {
     await t.typeText("#student-Hometown", "buddhist");
     await t.click("#student-add");
 
-    await t.navigateTo("/deleteStudent");
+    await t.navigateTo("/student");
 
-    await t.click(`#student-delete-${222222}`);
+    await t.click("#student-delete-${222222}");
 
-    // Assert after deletion
-    await t.expect(addedStudent.exists).notOk('Student was not deleted');
+    const table = Selector('#student-table')
+    const rowCount = await table.find('tr').count;
+
+    let tdText = await table.find('tr').nth(rowCount - 1).innerText;
+    await t.expect(tdText).notContains("Hiruni Gajanayake");
 });
