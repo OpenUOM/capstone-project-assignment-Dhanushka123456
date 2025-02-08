@@ -14,11 +14,8 @@ test('Testing delete students', async t => {
 
     await t.navigateTo("/deleteStudent");
 
-    await t.click("#student-delete-222222");
+    await t.click(`#student-delete-${222222}`);
 
-    const table = Selector('#student-delete-222222')
-    const rowCount = await table.find('tr').count;
-
-    let tdText = await table.find('tr').nth(rowCount - 1).innerText;
-    await t.expect(tdText).notContains("Hiruni Gajanayake");
+    // Assert after deletion
+    await t.expect(addedStudent.exists).notOk('Student was not deleted');
 });
