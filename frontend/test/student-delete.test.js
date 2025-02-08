@@ -3,10 +3,10 @@ process.env.NODE_ENV = "test";
 
 fixture`Testing Student UI`
     .page`http://localhost:8080/student`;
-     await t.expect(Selector("#id").exists).ok();
+     await t.expect(Selector("#student-id").exists).ok();
 
   // Enter student ID
-      await t.typeText("#id", "20003");
+      await t.typeText("#student-id", "20003");
 
   // Ensure delete button exists before clicking
       const deleteButton = Selector("#student-delete-20003");
