@@ -5,15 +5,15 @@ fixture`Testing Student UI`
     .page`http://localhost:8080/student`;
     
 test('Testing delete students', async t => {
-    await t.navigateTo("/deleteStudent");
-    await t.click("#student-delete-20003");
+    await t.navigateTo("/student");
+    await t.click(Selector("#student-delete-20003"));
     //const studentRow = Selector('#student-table').find('td').withText("20005");
    // await t.expect(studentRow.exists).ok('Student should be present before deletion');
 
     //await t.click('#student-delete');
     
 
-    await t.navigateTo("/student");
+    //await t.navigateTo("/student");
 
 
     const table = Selector('#student-table')
