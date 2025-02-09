@@ -181,9 +181,7 @@ describe("Student Endpoints", () => {
     // delete Student
     await requestWithSupertest.post("/deleteStudent").send({
       "id": 20003,
-      "name": "Sandakan",
-      "age": 15,
-      "hometown": "Homagama"
+      
     });
 
     const res = await requestWithSupertest.get("/listStudents");
