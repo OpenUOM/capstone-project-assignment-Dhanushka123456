@@ -12,14 +12,14 @@ test('Testing delete students', async t => {
     await t.typeText("#student-Hometown", "Kandy");
     await t.click("#student-add");
 
-    //await t.navigateTo("/addStudent");
-    await t.click("#student-delete");
+    await t.navigateTo("/deleteStudent");
+    //await t.click("#student-delete");
 
-    await t.navigateTo("/student");
+    //await t.navigateTo("/student");
 
-    const table = Selector('#student-table');
+    const table = Selector('#student-delete-20003');
     const rowCount = await table.find('tr').count;
 
     let lastRowText = await table.find('tr').nth(rowCount - 1).innerText;
-    await t.expect(lastRowText).contains("");
+    await t.expect(lastRowText).contains("20003");
 });
