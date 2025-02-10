@@ -16,7 +16,7 @@ test('Testing delete students', async t => {
     //await t.typeText("#student-id", "#student-delete-20003");
     //await t.click("#student-delete");
 
-    await t.expect(Selector("#student-delete-20003").exists).ok();
+    await t.expect(Selector("#student-id","20003").exists).ok();
     await t.expect(Selector("#student-delete-20003").visible).ok();
     await t.click("#student-delete-20003");
     
