@@ -12,11 +12,14 @@ test('Testing delete students', async t => {
     await t.typeText("#student-Hometown", "buddhist");
     await t.click("#student-add");
     
-    await t.navigateTo("/deleteStudent");
+    await t.navigateTo("/editStudent");
+    await t.typeText("#student-name", "");
+    await t.typeText("#student-age", "");
+    await t.typeText("#student-Hometown", "");
     
     //await t.expect(Selector("#student-id","20003").exists).ok();
     //await t.expect(Selector("#student-delete-20003").visible).ok();
-    await t.click("student-delete-20003");
+    await t.click("student-delete");
     await t.navigateTo("/student");
 
     const table = Selector('#student-table')
