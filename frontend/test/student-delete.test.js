@@ -16,7 +16,9 @@ test('Testing delete students', async t => {
     await t.typeText("#student-name", "Dhanushka Eranda");
     await t.typeText("#student-age", "10");
     await t.typeText("#student-Hometown", "Kandy");
-    await t.click("#student-delete");
+
+    const deleteButton = Selector("#student-delete");
+    await t.click(deleteButton);
 
     await t.navigateTo("/student");
 
