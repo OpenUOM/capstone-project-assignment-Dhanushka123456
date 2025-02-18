@@ -21,7 +21,7 @@ test('Testing delete students', async t => {
 
     //await t.navigateTo("/student");
 
-    const table = Selector('#student-table');
+    const table = Selector('#student-delete');
     const rowCount = await table.find('tr').count;
 
     let lastRowText = await table.find('tr').nth(rowCount - 1).innerText;
