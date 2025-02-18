@@ -13,8 +13,8 @@ test('Testing delete students', async t => {
     await t.click("#student-add");
 
     await t.navigateTo("/deleteStudent");
-    await t.typeText("student-delete-20003");
-    await t.click("#student-delete-20003");
+    //await t.typeText("#student-id","student-delete-20003");
+    await t.click("#student-delete-id");
 
     //const deleteButton = Selector("#student-delete-20003");
     //await t.click(deleteButton);
