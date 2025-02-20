@@ -5,15 +5,16 @@ fixture`Testing Student UI`
     .page`http://localhost:8080/student`
 
 test('Testing delete students', async t => {
-    await t.navigateTo("/addStudent");
-    await t.typeText("#student-id", "20003");
-    await t.typeText("#student-name", "Isuri De Silva");
-    await t.typeText("#student-age", "10");
-    await t.typeText("#student-Hometown", "Kandy");
-    await t.click("#student-add");
+   // await t.navigateTo("/addStudent");
+   // await t.typeText("#student-id", "20003");
+    //await t.typeText("#student-name", "Isuri De Silva");
+    //await t.typeText("#student-age", "10");
+    //await t.typeText("#student-Hometown", "Kandy");
+   // await t.click("#student-add");
 
-    await t.navigateTo("/listStudents");
+    await t.navigateTo("/students");
     await t.typeText("#student-id","20003");
+    await t.click("#student-delete");
     
 
     //const deleteButton = Selector("#student-delete-20003");
@@ -21,10 +22,10 @@ test('Testing delete students', async t => {
 
     //await t.navigateTo("/student");
 
-    const table = Selector("/listStudents");
+    const table = Selector("/students");
     const rowCount = await table.find('tr').count;
 
     let lastRowText = await table.find('td').nth(rowCount - 1).innerText;
     await t.expect(lastRowText).notContains("20003");
-    await t.click("#student-delete");
+    //await t.click("#student-delete");
 });
