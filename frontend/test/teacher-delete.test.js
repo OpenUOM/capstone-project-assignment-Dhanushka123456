@@ -16,8 +16,8 @@ test('Testing delete teachers', async t => {
     await t.click("#teacher-delete-300000");
 
     const table = Selector('#teacher-table')
-    const rowCount = await table.find('tr').count;
+    const rowCount = await table.find('td').count;
 
-    let tdText = await table.find('tr').nth(rowCount - 1).innerText;
+    let tdText = await table.find('td').nth(rowCount - 1).innerText;
     await t.expect(tdText).notContains("Hasitha Fernando");
 });
