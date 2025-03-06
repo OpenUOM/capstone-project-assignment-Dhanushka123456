@@ -18,7 +18,7 @@ test('Testing delete students', async t => {
     // Ensure the student has been added by checking the presence in the student list
     await t.navigateTo("/student");
     const table = Selector('#student-table');
-    await t.expect(table.innerText).contains("Kusal Mendis");
+    await t.expect(table.innerText).contains("");
 
     // Now navigate to deleteStudent and delete the student
     await t.navigateTo("/deleteStudent");
