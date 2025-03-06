@@ -22,7 +22,7 @@ test('Testing delete students', async t => {
     let tdText = await table.find('tr').nth(rowCount - 1).innerText;
     await t.expect(tdText).notContains("Pasindu Basnayaka");
 
-    const studentId = student[20004].id; // Fetch the student ID
+    const studentId = 20004; // Fetch the student ID
 
 // Navigate to the student URL
     await t.navigateTo("/student");
