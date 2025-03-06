@@ -14,7 +14,7 @@ test('Testing delete students', async t => {
     
     await t.navigateTo("/deleteStudent");
     //await t.typeText("#student-id", "555555");
-    await t.click("#student-delete");
+    await t.click("#student-delete-[555555]");
     
     await t.navigateTo("/student");
     const table = Selector('#student-table')
