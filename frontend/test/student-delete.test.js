@@ -22,7 +22,6 @@ test('Testing delete students', async t => {
     let tdText = await table.find('tr').nth(rowCount - 1).innerText;
     await t.expect(tdText).notContains("Pasindu Basnayaka");
     
-    await t.navigateTo("/student");
     await t.click("#student-delete-20004");
     
 });
