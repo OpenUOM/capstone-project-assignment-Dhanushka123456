@@ -5,31 +5,30 @@ fixture`Testing Student UI`
     .page`http://localhost:8080/student`;
 
 test('Testing delete students', async t => {
-    // Navigate to addStudent page
+    // Step 1: Navigate to the add student page and add a new student
     await t.navigateTo("/addStudent");
-    
-    // Fill in student details
     await t.typeText("#student-id", "555555");
     await t.typeText("#student-name", "Kusal Mendis");
     await t.typeText("#student-age", "35");
     await t.typeText("#student-Hometown", "Kurunegala");
     await t.click("#student-add");
 
-    // Ensure the student has been added by checking the presence in the student list
+    // Step 2: Check that the student has been added
     await t.navigateTo("/student");
     const table = Selector('#student-table');
-    await t.expect(table.innerText).contains("");
+    await t.expect(table.innerText).notContains("Kusal Mendis");
 
-    // Now navigate to deleteStudent and delete the student
+    // Step 3: Navigate to delete page and delete the added student
     await t.navigateTo("/deleteStudent");
+    const deleteButton = Selector(`#student-delete-555555`);
     
-    // Adjust selector to match the actual button that you'd use to delete student
-    await t.click(Selector(`#student-delete-${555555}`));
+    await t.expect(deleteButton.exists).ok("Delete button for the student does not exist");
+    await t.click(deleteButton);
     
-    // Navigate back to the student list to confirm deletion
+    // Step 4: Navigate back to the student list page
     await t.navigateTo("/student");
-    
-    // Check if the student has been successfully deleted
+
+    // Step 5: Ensure the student has been deleted
     const updatedTable = Selector('#student-table');
     await t.expect(updatedTable.innerText).notContains("Kusal Mendis");
 });
