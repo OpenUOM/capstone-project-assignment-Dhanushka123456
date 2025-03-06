@@ -31,10 +31,10 @@ test('Testing delete students', async t => {
     await t.navigateTo("/student");
     const updatedRowCount = await table.find('tr').count;
 
-    await t.expect(updatedRowCount).eql(rowCount - 1, 'Student count should decrease by one.');
+    await t.expect(updatedRowCount).eql(rowCount - 1);
 
  
     let isStudentPresent = await table.innerText;
-    await t.expect(isStudentPresent).notContains("Pasindu Basnayaka", 'Deleted student should not be present in the table.');
+    await t.expect(isStudentPresent).notContains("Pasindu Basnayaka");
 });
     
