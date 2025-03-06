@@ -22,7 +22,7 @@ test('Testing delete students', async t => {
     await t.navigateTo("/deleteStudent");
     const deleteButton = Selector(`#student-delete-555555`);
     
-    await t.expect(deleteButton.exists).ok("Delete button for the student does not exist");
+    await t.expect(deleteButton.exists).ok("");
     await t.click(deleteButton);
     
     // Step 4: Navigate back to the student list page
