@@ -1,4 +1,4 @@
-import { Selector } from 'testcafe';
+teimport { Selector } from 'testcafe';
 process.env.NODE_ENV = "test";
 
 fixture`Testing Student UI`
@@ -11,11 +11,12 @@ test('Testing delete students', async t => {
     await t.typeText("#student-age", "35");
     await t.typeText("#student-Hometown", "Kurunegala");
     await t.click("#student-add");
-
+    
+    await t.navigateTo("/deleteStudent");
+    await t.typeText("#student-id", "555555");
+    await t.click("#student-delete");
+    
     await t.navigateTo("/student");
-
-    await t.click("#student-delete-555555");
-
     const table = Selector('#student-table')
     const rowCount = await table.find('tr').count;
 
