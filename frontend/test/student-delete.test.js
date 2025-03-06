@@ -23,6 +23,19 @@ test('Testing delete students', async t => {
     await t.expect(tdText).notContains("Pasindu Basnayaka");
 
      await t.navigateTo("/deleteStudent");
-    await t.click("");
     
+    // Add logic to find and click the delete button/element for the student.
+    // Replace this with the correct selector or logic for your application.
+    await t.click(Selector('.delete-button').withText('Pasindu Basnayaka'));
+
+    // After deletion, verify that the student is no longer in the table
+    await t.navigateTo("/student");
+    const updatedRowCount = await table.find('tr').count;
+
+    await t.expect(updatedRowCount).eql(rowCount - 1, 'Student count should decrease by one.');
+
+    // Check that 'Pasindu Basnayaka' is no longer in the table
+    let isStudentPresent = await table.innerText;
+    await t.expect(isStudentPresent).notContains("Pasindu Basnayaka", 'Deleted student should not be present in the table.');
 });
+    
