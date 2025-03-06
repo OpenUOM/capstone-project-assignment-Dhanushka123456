@@ -22,10 +22,13 @@ test('Testing delete students', async t => {
     let tdText = await table.find('tr').nth(rowCount - 1).innerText;
     await t.expect(tdText).notContains("Pasindu Basnayaka");
 
-    await t.navigateTo("/deleteStudent");
-    await t.typeText("#student-id", "20004");
-    
-    await t.click("#student-delete");
+    const studentId = student[20004].id; // Fetch the student ID
+
+// Navigate to the student URL
+    await t.navigateTo("/student");
+
+// Click the delete button for the specific student
+    await t.click(`#student-delete-${studentId}`);
 
    
     await t.navigateTo("/student");
